@@ -1087,7 +1087,7 @@ By default, if you enter nothing, the size will be 10x40 and the starting alive 
 
 ## Authors
 
-* **Your Name** - *Initial work* - [YetiYetYet](https://github.com/YetiYetYet)
+* **YetiYetYet** - *Initial work* - [YetiYetYet](https://github.com/YetiYetYet)
 
 ## Questions/Contact
 
