@@ -29,7 +29,7 @@ class GameGrid:
         self.starting_alive_probability = alive_probability
         for x in range(self.size[0]):
             for y in range(self.size[1]):
-                if np.random.random() > 0.5:
+                if np.random.random() < self.starting_alive_probability:
                     self.grid[x][y].cell_state = CellState.ALIVE
 
     def set_cell(self, x: int, y: int, cell: Cell):
