@@ -25,8 +25,10 @@ The universe of the Game of Life is an infinite two-dimensional orthogonal grid 
 The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed, live or dead; births and deaths occur simultaneously.
 
 ## Sample of the output project
-````angular2html
-Hi, PyCharm
+```
+Enter the size of the grid in x (default 40): 
+Enter the size of the grid in y (default 10): 
+Enter the probability of life spawn (default 0.5) : 
 Generation: 0, size: 10x40, stabilized: False, starting_alive_probability: 0.5
 ⬜⬛⬜⬛⬛⬜⬛⬜⬜⬜⬛⬜⬛⬛⬜⬜⬛⬜⬜⬜⬛⬜⬜⬜⬛⬜⬜⬜⬛⬜⬛⬜⬜⬛⬜⬜⬜⬛⬜⬜
 ⬛⬛⬛⬜⬜⬜⬜⬜⬛⬛⬛⬛⬜⬜⬛⬛⬛⬜⬛⬜⬛⬛⬛⬜⬜⬛⬛⬜⬜⬜⬜⬜⬜⬛⬜⬛⬛⬛⬛⬜
