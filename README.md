@@ -1079,7 +1079,8 @@ To run the game, execute the following command in the terminal:
 Describe how to use the program, include screenshots or a video if you can. For example:
 
 1. Run the main script.
-2. Pres a touch to print the new generation or 'q' to quit.
+2. Follow the instructions in the terminal. It will ask to enter a size for the grid, a starting alive probability. 
+By default, if you enter nothing, the size will be 10x40 and the starting alive probability will be 0.5.
 3. Watch the game evolve in your terminal.
 
 ## Authors
