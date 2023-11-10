@@ -14,6 +14,7 @@ def init_game_of_life_module(custom_settings_input: bool = False):
         game_grid.init_grid_random()
 
     while True:
+        game_grid.print_grid_info()
         game_grid.print_grid()
         user_input = input("Press a touch to continue or 'q' to quit: ")
 

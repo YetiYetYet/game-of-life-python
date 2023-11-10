@@ -1,9 +1,10 @@
+
 from copy import deepcopy
 from dataclasses import dataclass
 import numpy as np
 
 from .cell import Cell
-from .cell_state import CellState
+from .enums import CellState
 
 
 @dataclass
@@ -17,23 +18,20 @@ class GameGrid:
     stabilized: bool = False
     starting_alive_probability: float = 0.5
 
-    def __init__(self, size: (int, int)):
+    def __init__(self, size: (int, int)) -> None:
         self.size = size
         self.generation = 0
         self.grid = [[Cell() for _ in range(size[1])] for _ in range(size[0])]  # TODO: Check if this is correct
         self.__gen_grid = deepcopy(self.grid)
         self.__old_gen_grid = deepcopy(self.grid)
 
-    def init_grid_random(self, alive_probability: float = 0.5):
+    def init_grid_random(self, alive_probability: float = 0.5) -> None:
         """Initialize the grid with random values."""
         self.starting_alive_probability = alive_probability
         for x in range(self.size[0]):
             for y in range(self.size[1]):
                 if np.random.random() < self.starting_alive_probability:
                     self.grid[x][y].cell_state = CellState.ALIVE
-
-    def set_cell(self, x: int, y: int, cell: Cell):
-        self.grid[x][y] = cell
 
     def get_neighbors(self, x: int, y: int) -> list[Cell]:
         """Get the neighbors of a cell."""
@@ -52,23 +50,20 @@ class GameGrid:
                 neighbors.append(self.__gen_grid[x + i][y + j])
         return neighbors
 
-    def update_next_generation(self):
+    def update_next_generation(self) -> None:
         """update the next generation of the game grid."""
         if self.__old_gen_grid == self.grid:
             self.stabilized = True
         self.__old_gen_grid = deepcopy(self.__gen_grid)
         self.__gen_grid = deepcopy(self.grid)
-        for x in range(self.size[0]):
+        for x in range(self.size[0]): # TODO: Try enumerate
             for y in range(self.size[1]):
-                cell = self.grid[x][y]
                 neighbors = self.get_neighbors(x, y)
-                cell.set_next_state(neighbors)
+                self.grid[x][y].set_next_state(neighbors)
         self.generation += 1
 
-    def print_grid(self):
+    def print_grid(self) -> None:
         """Print the game grid."""
-        print(f"Generation: {self.generation}, size: {self.size[0]}x{self.size[1]}, stabilized: {self.stabilized}, "
-              f"starting_alive_probability: {self.starting_alive_probability}")
         for x in range(self.size[0]):
             for y in range(self.size[1]):
                 cell = self.grid[x][y]
@@ -77,3 +72,8 @@ class GameGrid:
                 else:
                     print("⬛", end="")
             print()
+
+    def print_grid_info(self) -> None:
+        """Print the game grid info (size, stabilized and starting_alive_probability)."""
+        print(f"Generation: {self.generation}, size: {self.size[0]}x{self.size[1]}, stabilized: {self.stabilized}, "
+              f"starting_alive_probability: {self.starting_alive_probability}")
