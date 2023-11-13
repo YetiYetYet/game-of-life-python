@@ -13,6 +13,8 @@ It consists of a grid of cells which, based on a few mathematical rules,
 can live, die or multiply. Depending on the initial conditions, 
 the cells form various patterns throughout the course of the game.
 
+The packages is available on PyPI: https://pypi.org/project/game-of-life-YETIYETYET/
+
 ## Rules of the Game
 
 The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead. Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:

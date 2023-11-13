@@ -1,4 +1,4 @@
-import game_of_life
+from src import game_of_life
 
 
 def init_game_of_life_module(custom_settings_input: bool = False):

@@ -1,7 +1,7 @@
 import unittest
-from game_of_life import GameGrid
-from game_of_life import Cell
-from game_of_life import CellState
+from src.game_of_life import GameGrid
+from src.game_of_life import Cell
+from src.game_of_life import CellState
 
 
 class MyTestCase(unittest.TestCase):
