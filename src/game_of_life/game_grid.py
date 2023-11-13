@@ -50,10 +50,10 @@ class GameGrid:
         # Use a copy of the grid to update the next generation
         self.__gen_grid = deepcopy(self.grid)
 
-        for x, _ in enumerate(range(self.size[0])):
-            for y, _ in enumerate(range(self.size[1])):
+        for x, line in enumerate(self.grid):
+            for y, cell in enumerate(line):
                 neighbors = self.get_neighbors(x, y)
-                self.grid[x][y].set_next_state(neighbors)
+                cell.cell_state = Cell.determine_next_state(self.__gen_grid[x][y].cell_state, neighbors)
         self.generation += 1
 
     def is_stabilized(self) -> bool:

@@ -14,6 +14,8 @@ class Cell:
             return CellState.DEAD
         elif actual_cell_state == CellState.DEAD and alive_neighbors == 3:
             return CellState.ALIVE
+        else:
+            return actual_cell_state
 
     def set_next_state(self, neighbors: list[Cell]) -> None:
         """Set the next state of the cell based on the state of its neighbors."""
