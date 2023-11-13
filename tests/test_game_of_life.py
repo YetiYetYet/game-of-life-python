@@ -4,7 +4,7 @@ from src.game_of_life import Cell
 from src.game_of_life import CellState
 
 
-class MyTestCase(unittest.TestCase):
+class GameOfLifeTestCase(unittest.TestCase):
 
     def setUp(self):
         self.game_grid = GameGrid((6, 6))
